@@ -5,7 +5,8 @@ from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from shortuuid import uuid
-from .database import database, qrs
+from .database import database
+from .models import qrs
 from . import crud
 
 # Initialize app
