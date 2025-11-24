@@ -13,7 +13,7 @@ A modern web application that generates QR codes for URLs with built-in link sho
 
 ## Live Demo
 
-The application is deployed and running on Render: [Your Render URL Here]
+The application is deployed and running on Render
 
 ## Tech Stack
 
