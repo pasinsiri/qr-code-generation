@@ -167,9 +167,22 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+# MacOS file system
+.DS_Store
+
+# Databases / Files
+migrations
+static/qr
+local.db
+note.txt
+
 # PyPI configuration file
 .pypirc
 
 # UV components
 .python-version
 pyproject.toml
+uv.lock
+
+# Alembic
+alembic.ini
