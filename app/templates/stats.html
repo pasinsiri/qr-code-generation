@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="h-full">
+<head>
+  <meta charset="utf-8">
+  <title>QR Code Statistics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-full bg-gray-100">
+  <div class="min-h-full flex items-center justify-center py-12 px-4">
+    <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
+      <h1 class="text-3xl font-bold text-center mb-8">{{ qr.title }}</h1>
+
+      <div class="flex justify-center mb-6">
+        <img src="{{ qr_image }}" alt="QR Code" class="border-4 border-gray-200 rounded-lg">
+      </div>
+
+      <div class="space-y-4">
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <div class="text-sm text-gray-600">Target URL:</div>
+          <div class="font-medium break-all">{{ qr.url }}</div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-blue-50 p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold text-blue-600">{{ qr.total_clicks }}</div>
+            <div class="text-sm text-gray-600">Total Clicks</div>
+          </div>
+          <div class="bg-green-50 p-4 rounded-lg text-center">
+            <div class="text-3xl font-bold text-green-600">{{ qr.unique_clicks }}</div>
+            <div class="text-sm text-gray-600">Unique Clicks</div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-4 rounded-lg">
+          <div class="text-sm text-gray-600">Created:</div>
+          <div class="font-medium">{{ qr.created_at.strftime('%Y-%m-%d %H:%M:%S') if qr.created_at else 'N/A' }}</div>
+        </div>
+
+        <a href="/" class="block text-center px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium">
+          Create New QR Code
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
