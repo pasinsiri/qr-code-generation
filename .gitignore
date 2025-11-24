@@ -172,7 +172,7 @@ cython_debug/
 
 # Databases / Files
 migrations
-static/qr
+static/qr/*.png
 local.db
 note.txt
 
