@@ -1,9 +1,14 @@
 import os
-from database import Database
+from databases import Database
 from sqlalchemy import create_engine, MetaData
 
 # * Setup database
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:pass@localhost/qrdb")
-databse = Database(DATABASE_URL)
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./local.db")
+
+# databases library needs the URL with the async driver
+database = Database(DATABASE_URL)
 metadata = MetaData()
-engine = create_engine(DATABASE_URL)
+
+# SQLAlchemy engine needs the sync driver URL
+SYNC_DATABASE_URL = DATABASE_URL.replace("sqlite+aiosqlite", "sqlite").replace("postgresql+asyncpg", "postgresql")
+engine = create_engine(SYNC_DATABASE_URL)
