@@ -171,6 +171,7 @@ cython_debug/
 .DS_Store
 
 # Databases / Files
+migrations
 static/qr
 local.db
 note.txt
